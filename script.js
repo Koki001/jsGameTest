@@ -5,6 +5,8 @@ const start = document.querySelector("#startGame")
 const end = document.querySelector("#endGame")
 const score = document.querySelector("#score")
 const level = document.querySelector(".nextLevel")
+const instructions = document.querySelector(".instructions")
+const instructionExit = document.querySelector(".exitInstructions")
 
 let playerSpeed = 20
 let speedBonus = 0
@@ -34,6 +36,10 @@ end.addEventListener("click", function () {
   hole.style.animation = `none`
   block.style.animation = `none`
   player.style = "left: 30px", "top: 200px"
+  location.reload()
+})
+instructionExit.addEventListener("click", function(){
+  instructions.style = "display: none"
 })
 
 hole.addEventListener("animationiteration", function() {
@@ -73,6 +79,19 @@ function gameStart() {
       block.style.animation = `blockSlide ${levelSpeed}s infinite linear`
     }, 2000)
   }
+  if (count === 15) {
+    level.classList.remove("invisibleMessage")
+    hole.style.animation = `none`
+    block.style.animation = `none`
+    levelSpeed = 1.1
+    speedBonus = 25
+    setTimeout(function () {
+      count = 16
+      level.classList.add("invisibleMessage")
+      hole.style.animation = `blockSlide ${levelSpeed}s infinite linear`
+      block.style.animation = `blockSlide ${levelSpeed}s infinite linear`
+    }, 2000)
+  }
 
   playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top"))
   playerLeft = parseInt(window.getComputedStyle(player).getPropertyValue("left"))
@@ -101,7 +120,7 @@ function gameStart() {
   if ((BlockLeft < (playerLeft + 50)) && (BlockLeft > (playerLeft - 80)) && ((cTop < holeTop || cTop > holeTop + 70))){
     block.style.animationPlayState = "paused"
     hole.style.animationPlayState = "paused"
-    alert("game over")
+    alert(`game over, your score is ${count}`)
     count = 0
     quit.exit = true
     player.classList.add("playerInvisible")

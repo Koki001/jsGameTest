@@ -18,7 +18,32 @@ body {
   margin: 0;
   padding: 0;
 }
-
+h2 {
+  font-size: 20px;
+  margin-top: 0;
+}
+.instructions {
+  width: 20%;
+}
+.exitInstructions {
+  float: right;
+}
+ul {
+  margin: 0;
+}
+li {
+  list-style: none;
+  font-size: 15px;
+}
+li p {
+  font-size: 15px;
+}
+p {
+  margin-top: 0;
+}
+.gameWrapper {
+  display: flex;
+}
 .game {
   background-color: black;
   height: 700px;
