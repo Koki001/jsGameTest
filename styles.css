@@ -77,8 +77,8 @@ p {
   top: -500px;
 }
 .animationStart {
-  animation: blockSlide 2s infinite linear;
-  animation: blockSlide 2s infinite linear;
+  animation: blockSlide 3s infinite linear;
+  animation: blockSlide 3s infinite linear;
 }
 
 .animationPause {

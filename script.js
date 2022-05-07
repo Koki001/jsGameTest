@@ -10,7 +10,7 @@ const instructionExit = document.querySelector(".exitInstructions")
 
 let playerSpeed = 20
 let speedBonus = 0
-let levelSpeed = 2
+let levelSpeed = 3
 let count = 0
 
 const quit = {
@@ -71,7 +71,7 @@ function gameStart() {
     hole.style.animation = `none`
     block.style.animation = `none`
     levelSpeed = 1.5
-    speedBonus = 10
+    speedBonus = 20
     setTimeout(function(){
       count = 6
       level.classList.add("invisibleMessage")
@@ -84,7 +84,7 @@ function gameStart() {
     hole.style.animation = `none`
     block.style.animation = `none`
     levelSpeed = 1.1
-    speedBonus = 25
+    speedBonus = 30
     setTimeout(function () {
       count = 16
       level.classList.add("invisibleMessage")
