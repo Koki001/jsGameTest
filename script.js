@@ -134,5 +134,5 @@ function gameStart() {
   if (quit.exit === true) {
     return
   }
-  setTimeout(gameStart, 10)
+  setTimeout(gameStart, 5)
 }
