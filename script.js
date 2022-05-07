@@ -82,7 +82,7 @@ function gameStart() {
   let cTop = -(700 - playerTop)
 
   if (keyState["ShiftRight"] || keyState["ShiftLeft"]){
-    playerSpeed = playerSpeed + 5
+    playerSpeed = 30
   } else {
     playerSpeed = 20
   }
